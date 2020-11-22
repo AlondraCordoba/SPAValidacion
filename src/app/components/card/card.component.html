@@ -1,0 +1,16 @@
+<div class="card-columns">
+    <!--Ver artista = Funcion
+    (item) = Parametro/Objeto-->
+    <div *ngFor="let item of items" class="card shadow-sm p-3 mb-5 rounded border btn" (click)="verArtista(item)">
+        <img [src]="item.images | noImage" alt="" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p *ngIf="item.artists" class="card-text">
+                <span *ngFor="let artist of item.artists" class="badge badge-pill badge-success">{{artist.name}}</span>
+            </p>
+            <p *ngIf="item.genres" class="card-text">
+                <span *ngFor="let genre of item.genres" class="badge badge-pill badge-success">{{ genre }}</span>
+            </p>
+        </div>
+    </div>
+</div>
